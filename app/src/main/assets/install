@@ -1,4 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/sh
 pkg remove termux-display-nightly -y
 pkg remove termux-x11-nightly -y
-dpkg -i /data/data/com.termux/files/home/termux-x11-nightly-1.03.10-0-all.deb
+echo "修复之前版本无法安装xkb依赖导致安装失败问题，请🔗网络，5秒后开始自动安装"
+echo "原本安装命令为（不推荐）："
+echo "dpkg -i /data/data/com.termux/files/home/termux-x11-nightly-1.03.10-0-all.deb"
+sleep 5
+pkg up
+apt install -f -y
+pkg i x11-repo
+cd ~
+yes | apt install ./termux-x11-nightly-1.03.10-0-all.deb
