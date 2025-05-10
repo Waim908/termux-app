@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#808080">
     <PreferenceCategory
         android:key="output"
         android:title="@string/output">
         <ListPreference
-            android:defaultValue="native"
+            android:defaultValue="exact"
             android:entries="@array/displayResolutionVariants"
             android:entryValues="@array/displayResolutionVariants"
             android:key="displayResolutionMode"
@@ -17,7 +18,7 @@
             android:title="@string/display_scale" />
 
         <ListPreference
-            android:defaultValue="1280x1024"
+            android:defaultValue="1280x720"
             android:entries="@array/displayResolution"
             android:entryValues="@array/displayResolution"
             android:key="displayResolutionExact"
@@ -49,7 +50,7 @@
             android:key="stop_desktop"
             android:title="@string/stop_desktop" />
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="enableFloatBallMenu"
             android:summary="@string/enabl_float_ball_menu_notice"
             android:title="@string/enabl_float_ball_menu" />
@@ -63,7 +64,7 @@
             android:title="@string/stretch_to_fit_display" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="Reseed"
             android:summary="@string/reseed_screen_summary"
             android:title="@string/reseed_screen" />
@@ -75,18 +76,18 @@
             android:title="@string/pip_mode" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="fullscreen"
             android:summary="@string/fullscreen_on_device_display_summary"
             android:title="@string/fullscreen_on_device_display" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="forceLandscape"
             android:title="@string/force_landscape_orientation" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="hideCutout"
             android:title="@string/hide_display_cutout" />
 
@@ -137,7 +138,7 @@
         android:key="kbd"
         android:title="@string/keyboard">
         <SwitchPreferenceCompat
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="showAdditionalKbd"
             android:summary="@string/show_additional_keyboard_summary"
             android:title="@string/show_additional_keyboard" />
@@ -154,7 +155,7 @@
             android:title="@string/show_ime_with_external_keyboard" />
 
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="preferScancodes"
             android:summary="@string/prefer_scancodes_when_possible_summary"
             android:title="@string/prefer_scancodes_when_possible" />
