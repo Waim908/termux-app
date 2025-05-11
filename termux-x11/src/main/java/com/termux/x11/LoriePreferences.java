@@ -153,7 +153,9 @@ public class LoriePreferences extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#888888"));
         loriePreferenceFragment = new LoriePreferenceFragment();
+        setContentView(R.layout.x11preference);
 //        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, loriePreferenceFragment).commit();
 
         ActionBar actionBar = getSupportActionBar();
@@ -163,6 +165,8 @@ public class LoriePreferences extends AppCompatActivity {
             actionBar.setTitle("Preferences");
         }
         loriePreferenceFragment.setPreferenceActivity(this);
+
+        
     }
 
     @SuppressLint("WrongConstant")
