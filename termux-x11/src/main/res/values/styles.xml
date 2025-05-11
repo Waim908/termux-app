@@ -225,7 +225,11 @@
         <item name="tint">#e0e0e0</item>
     </style>
 
-    <style name="preferencecategoryStyle" parent="PreferenceThemeOverlay.v14.Material">
-        <item name="android:textColor">#888888</item>
+    <style name="CustomPreferenceTheme" parent="PreferenceThemeOverlay">
+        <item name="preferenceStyle">@style/CustomPreference</item>
+    </style>
+
+    <style name="CustomPreference" parent="@style/Preference">
+        <item name="android:layout">@layout/custom_preference</item>
     </style>
 </resources>
