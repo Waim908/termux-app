@@ -13,12 +13,4 @@
     <style name="TermuxActivity.Drawer.ButtonBarStyle.Dark" parent="@style/Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/white</item>
     </style>
-
-    <style name="CustomPreferenceTheme" parent="PreferenceThemeOverlay">
-        <item name="preferenceStyle">@style/CustomPreference</item>
-    </style>
-
-    <style name="CustomPreference" parent="@style/Preference">
-        <item name="android:layout">@layout/custom_preference</item>
-    </style>
 </resources>

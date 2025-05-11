@@ -224,12 +224,4 @@
         <item name="android:src">@drawable/icon_help</item>
         <item name="tint">#e0e0e0</item>
     </style>
-
-    <style name="CustomPreferenceTheme" parent="PreferenceThemeOverlay">
-        <item name="preferenceStyle">@style/CustomPreference</item>
-    </style>
-
-    <style name="CustomPreference" parent="@style/Preference">
-        <item name="android:layout">@layout/custom_preference</item>
-    </style>
 </resources>
