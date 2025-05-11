@@ -227,5 +227,5 @@
 
     <style name="preferencecategoryStyle" parent="PreferenceThemeOverlay.v14.Material">
         <item name="android:textColor">#888888</item>
-    <style>
+    </style>
 </resources>
