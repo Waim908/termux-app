@@ -32,9 +32,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.graphics.Color;
-import android.content.res.Configuration;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -157,8 +154,6 @@ public class LoriePreferences extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loriePreferenceFragment = new LoriePreferenceFragment();
-//        setContentView(R.layout.x11preference);    
-//        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#888888"));
 //        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, loriePreferenceFragment).commit();
 
         ActionBar actionBar = getSupportActionBar();
@@ -168,8 +163,7 @@ public class LoriePreferences extends AppCompatActivity {
             actionBar.setTitle("Preferences");
         }
         loriePreferenceFragment.setPreferenceActivity(this);
-
-        
+            getWindow().getDecorView().setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light, null));
     }
 
     @SuppressLint("WrongConstant")
@@ -315,50 +309,7 @@ public class LoriePreferences extends AppCompatActivity {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
                     && ContextCompat.checkSelfPermission(requireContext(), POST_NOTIFICATIONS) == PERMISSION_DENIED;
             findPreference("requestNotificationPermission").setVisible(requestNotificationPermissionVisible);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                int currentNightMode = requireActivity().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-                int textColor = currentNightMode == Configuration.UI_MODE_NIGHT_YES ? 
-                    Color.BLACK : // 深色主题下使用黑色文本
-                    Color.WHITE;  // 浅色主题下使用白色文本
-                    
-                // 获取所有Preference并设置文本颜色
-                setPreferenceTextColor(getPreferenceScreen(), textColor);
-            }
         }
-
-        // 使用PreferenceViewHolder重构的方法
-        private void setPreferenceTextColor(Preference preference, int textColor) {
-            // 创建一个临时的ViewHolder来获取视图
-            Context context = requireContext();
-            LayoutInflater inflater = LayoutInflater.from(context);
-            
-            // 为Preference创建默认布局
-            int layoutResId = preference.getLayoutResource();
-            View view = inflater.inflate(layoutResId, null, false);
-            
-            // 绑定Preference到视图
-            preference.onBindViewHolder(PreferenceViewHolder.createInstanceForTests(view));
-            
-            // 设置文本颜色
-            TextView titleView = view.findViewById(android.R.id.title);
-            if (titleView != null) {
-                titleView.setTextColor(textColor);
-            }
-            
-            TextView summaryView = view.findViewById(android.R.id.summary);
-            if (summaryView != null) {
-                summaryView.setTextColor(textColor);
-            }
-            
-            // 如果是PreferenceGroup，递归处理子项
-            if (preference instanceof PreferenceGroup) {
-                PreferenceGroup group = (PreferenceGroup) preference;
-                for (int i = 0; i < group.getPreferenceCount(); i++) {
-                    setPreferenceTextColor(group.getPreference(i), textColor);
-                }
-            }
-        }
-        
 
         @Override
         public void onCreate(final Bundle savedInstanceState) {
