@@ -33,6 +33,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Color;
+import android.content.res.Configuration;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -156,7 +158,7 @@ public class LoriePreferences extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loriePreferenceFragment = new LoriePreferenceFragment();
 //        setContentView(R.layout.x11preference);    
-        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#888888"));
+//        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#888888"));
 //        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, loriePreferenceFragment).commit();
 
         ActionBar actionBar = getSupportActionBar();
@@ -313,6 +315,15 @@ public class LoriePreferences extends AppCompatActivity {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
                     && ContextCompat.checkSelfPermission(requireContext(), POST_NOTIFICATIONS) == PERMISSION_DENIED;
             findPreference("requestNotificationPermission").setVisible(requestNotificationPermissionVisible);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                int currentNightMode = requireActivity().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                int textColor = currentNightMode == Configuration.UI_MODE_NIGHT_YES ? 
+                    Color.BLACK : // 深色主题下使用黑色文本
+                    Color.WHITE;  // 浅色主题下使用白色文本
+                    
+                // 获取所有Preference并设置文本颜色
+                setPreferenceTextColor(getPreferenceScreen(), textColor);
+            }
         }
 
         @Override
