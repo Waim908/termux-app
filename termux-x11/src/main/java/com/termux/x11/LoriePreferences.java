@@ -324,7 +324,31 @@ public class LoriePreferences extends AppCompatActivity {
                 // 获取所有Preference并设置文本颜色
                 setPreferenceTextColor(getPreferenceScreen(), textColor);
             }
+            // 泛型方法处理所有类型的Preference
+            private void setPreferenceTextColor(Preference preference, int textColor) {
+                // 处理当前Preference
+                View preferenceView = preference.getView(null, null, requireActivity());
+                if (preferenceView != null) {
+                    TextView titleView = preferenceView.findViewById(android.R.id.title);
+                    if (titleView != null) {
+                        titleView.setTextColor(textColor);
+                    }
+                    TextView summaryView = preferenceView.findViewById(android.R.id.summary);
+                    if (summaryView != null) {
+                        summaryView.setTextColor(textColor);
+                    }
+                }
+                
+                // 如果是PreferenceGroup，递归处理子项
+                if (preference instanceof PreferenceGroup) {
+                    PreferenceGroup group = (PreferenceGroup) preference;
+                    for (int i = 0; i < group.getPreferenceCount(); i++) {
+                        setPreferenceTextColor(group.getPreference(i), textColor);
+                    }
+                }
+            }
         }
+        
 
         @Override
         public void onCreate(final Bundle savedInstanceState) {
