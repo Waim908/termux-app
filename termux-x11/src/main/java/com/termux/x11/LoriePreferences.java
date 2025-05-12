@@ -326,6 +326,7 @@ public class LoriePreferences extends AppCompatActivity {
             }
         }
 
+        // 使用PreferenceViewHolder重构的方法
         private void setPreferenceTextColor(Preference preference, int textColor) {
             // 创建一个临时的ViewHolder来获取视图
             Context context = requireContext();
@@ -349,13 +350,13 @@ public class LoriePreferences extends AppCompatActivity {
                 summaryView.setTextColor(textColor);
             }
             
-            // // 如果是PreferenceGroup，递归处理子项
-            // if (preference instanceof PreferenceGroup) {
-            //     PreferenceGroup group = (PreferenceGroup) preference;
-            //     for (int i = 0; i < group.getPreferenceCount(); i++) {
-            //         setPreferenceTextColor(group.getPreference(i), textColor);
-            //     }
-            // }
+            // 如果是PreferenceGroup，递归处理子项
+            if (preference instanceof PreferenceGroup) {
+                PreferenceGroup group = (PreferenceGroup) preference;
+                for (int i = 0; i < group.getPreferenceCount(); i++) {
+                    setPreferenceTextColor(group.getPreference(i), textColor);
+                }
+            }
         }
         
 
