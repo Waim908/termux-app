@@ -326,28 +326,36 @@ public class LoriePreferences extends AppCompatActivity {
             }
         }
 
-            // 泛型方法处理所有类型的Preference
         private void setPreferenceTextColor(Preference preference, int textColor) {
-                // 处理当前Preference
-                View preferenceView = preference.getView(null, null, requireActivity());
-                if (preferenceView != null) {
-                    TextView titleView = preferenceView.findViewById(android.R.id.title);
-                    if (titleView != null) {
-                        titleView.setTextColor(textColor);
-                    }
-                    TextView summaryView = preferenceView.findViewById(android.R.id.summary);
-                    if (summaryView != null) {
-                        summaryView.setTextColor(textColor);
-                    }
-                }
-                
-                // 如果是PreferenceGroup，递归处理子项
-                if (preference instanceof PreferenceGroup) {
-                    PreferenceGroup group = (PreferenceGroup) preference;
-                    for (int i = 0; i < group.getPreferenceCount(); i++) {
-                        setPreferenceTextColor(group.getPreference(i), textColor);
-                    }
-                }
+            // 创建一个临时的ViewHolder来获取视图
+            Context context = requireContext();
+            LayoutInflater inflater = LayoutInflater.from(context);
+            
+            // 为Preference创建默认布局
+            int layoutResId = preference.getLayoutResource();
+            View view = inflater.inflate(layoutResId, null, false);
+            
+            // 绑定Preference到视图
+            preference.onBindViewHolder(PreferenceViewHolder.createInstanceForTests(view));
+            
+            // 设置文本颜色
+            TextView titleView = view.findViewById(android.R.id.title);
+            if (titleView != null) {
+                titleView.setTextColor(textColor);
+            }
+            
+            TextView summaryView = view.findViewById(android.R.id.summary);
+            if (summaryView != null) {
+                summaryView.setTextColor(textColor);
+            }
+            
+            // // 如果是PreferenceGroup，递归处理子项
+            // if (preference instanceof PreferenceGroup) {
+            //     PreferenceGroup group = (PreferenceGroup) preference;
+            //     for (int i = 0; i < group.getPreferenceCount(); i++) {
+            //         setPreferenceTextColor(group.getPreference(i), textColor);
+            //     }
+            // }
         }
         
 
