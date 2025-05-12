@@ -155,7 +155,7 @@ public class LoriePreferences extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loriePreferenceFragment = new LoriePreferenceFragment();
-        setContentView(R.layout.x11preference);
+//        setContentView(R.layout.x11preference);
         getSupportFragmentManager()
             .beginTransaction()
             .replace(android.R.id.content, loriePreferenceFragment)
