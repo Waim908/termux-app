@@ -300,7 +300,7 @@ public class TermuxActivity extends com.termux.x11.MainActivity implements Servi
         mProperties = TermuxAppSharedProperties.getProperties();
         reloadProperties();
 
-        setActivityTheme();
+ //       setActivityTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux_main);
         mMainContentView = findViewById(R.id.id_termux_layout);
