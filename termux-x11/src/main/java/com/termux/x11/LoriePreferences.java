@@ -163,7 +163,7 @@ public class LoriePreferences extends AppCompatActivity {
             actionBar.setTitle("Preferences");
         }
         loriePreferenceFragment.setPreferenceActivity(this);
-            getWindow().getDecorView().setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light, null));
+//            getWindow().getDecorView().setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light, null));
     }
 
     @SuppressLint("WrongConstant")
