@@ -55,6 +55,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
+        android:forceDarkAllowed="false"
         android:theme="@style/Theme.TermuxApp.DayNight.DarkActionBar"
         tools:targetApi="m">
         <!--termux-x11-->
@@ -62,7 +63,7 @@
             android:name="com.termux.x11.controller.ControlsEditorActivity"
             android:exported="false"
             android:screenOrientation="sensor"
-            android:theme="@style/Theme.TermuxApp.DayNight.NoActionBar" />
+            android:theme="@style/Theme.TermuxApp.Light.NoActionBar" />
 
         <activity
             android:name="com.termux.x11.controller.ExternalControllerBindingsActivity"

@@ -152,6 +152,7 @@ public class LoriePreferences extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme.TermuxApp.Light.NoActionBar);
         super.onCreate(savedInstanceState);
         loriePreferenceFragment = new LoriePreferenceFragment();
 //        getSupportFragmentManager().beginTransaction().replace(android.R.id.content, loriePreferenceFragment).commit();
@@ -313,6 +314,7 @@ public class LoriePreferences extends AppCompatActivity {
 
         @Override
         public void onCreate(final Bundle savedInstanceState) {
+            setTheme(R.style.Theme.TermuxApp.Light.NoActionBar);
             super.onCreate(savedInstanceState);
             SharedPreferences preferences = getPreferenceManager().getSharedPreferences();
 
