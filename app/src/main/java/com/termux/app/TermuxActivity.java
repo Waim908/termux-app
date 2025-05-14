@@ -300,7 +300,7 @@ public class TermuxActivity extends com.termux.x11.MainActivity implements Servi
         mProperties = TermuxAppSharedProperties.getProperties();
         reloadProperties();
 
- //       setActivityTheme();
+        setActivityTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termux_main);
         mMainContentView = findViewById(R.id.id_termux_layout);
@@ -715,15 +715,15 @@ public class TermuxActivity extends com.termux.x11.MainActivity implements Servi
     }
 
 
-    // private void setActivityTheme() {
-    //     // Update NightMode.APP_NIGHT_MODE
-    //     TermuxThemeUtils.setAppNightMode(mProperties.getNightMode());
+    private void setActivityTheme() {
+        // Update NightMode.APP_NIGHT_MODE
+        TermuxThemeUtils.setAppNightMode(mProperties.getNightMode());
 
-    //     // Set activity night mode. If NightMode.SYSTEM is set, then android will automatically
-    //     // trigger recreation of activity when uiMode/dark mode configuration is changed so that
-    //     // day or night theme takes affect.
-    //     AppCompatActivityUtils.setNightMode(this, NightMode.getAppNightMode().getName(), true);
-    // }
+        // Set activity night mode. If NightMode.SYSTEM is set, then android will automatically
+        // trigger recreation of activity when uiMode/dark mode configuration is changed so that
+        // day or night theme takes affect.
+        AppCompatActivityUtils.setNightMode(this, NightMode.getAppNightMode().getName(), true);
+    }
 
     private void setMargins() {
         RelativeLayout relativeLayout = findViewById(R.id.activity_termux_root_relative_layout);
