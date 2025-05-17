@@ -92,8 +92,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Executors;
 
-import com.termux.app.TermuxActivity;
-
 @SuppressLint("ApplySharedPref")
 @SuppressWarnings({"deprecation", "unused"})
 public class MainActivity extends LoriePreferences implements View.OnApplyWindowInsetsListener {
@@ -180,12 +178,12 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         frm = findViewById(R.id.frame);
         findViewById(R.id.terminal_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
-//                Toast.makeText(MainActivity.this, "Nya~", Toast.LENGTH_SHORT).show();
-                private TermuxActivity mTermuxActivity;
+                Toast.makeText(MainActivity.this, "ᗜˬᗜ", Toast.LENGTH_SHORT).show();
+                // private TermuxActivity mTermuxActivity;
                 // mTermuxActivity = termuxActivity;
                 // boolean preState = mShowTerminal;
                 // mShowTerminal = !mShowTerminal;
-                mTermuxActivity.getMainContentView().setTerminalViewSwitchSlider(true);
+                // mTermuxActivity.getMainContentView().setTerminalViewSwitchSlider(true);
             }
         });        
 

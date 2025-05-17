@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="application_name">终端</string>
+    <string name="application_name">终端与termux-x11</string>
     <string name="shared_user_label">user</string>
     <string name="permission_run_command_label">在环境中运行命令</string>
     <string name="permission_run_command_description">在环境中执行任意命令并访问文件</string>
