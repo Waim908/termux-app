@@ -12,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.appcompat.app.AlertDialog;
 
 import com.termux.R;
 import com.termux.app.TermuxActivity;
@@ -205,20 +204,9 @@ public class FloatBallMenuClient {
         MenuItem stopItem = new MenuItem(mTermuxActivity.getDrawable(R.drawable.icon_menu_kill_current_process_shape)) {
             @Override
             public void action() {
-                new android.app.AlertDialog.Builder(getActivity())
-                    .setTitle("Stop Desktop")
-                    .setPositiveButton("OK",
-                        (dialog, whichButton) -> {
-                            if (mTermuxActivity != null) {
-                                mTermuxActivity.stopDesktop();
-                                toast(mTermuxActivity.getString(R.string.terminate_current_process));
-                                mFloatballManager.closeMenu();
-                            }
-                        }
-                    )
-                    .setNegativeButton("Cancel", (dialog, whichButton) -> dialog.dismiss())
-                    .create()
-                    .show();
+                mTermuxActivity.stopDesktop();
+                toast(mTermuxActivity.getString(R.string.terminate_current_process));
+                mFloatballManager.closeMenu();
             }
         };
         MenuItem gamePadItem = new MenuItem(mTermuxActivity.getDrawable(R.drawable.icon_menu_game_pad_shape)) {
