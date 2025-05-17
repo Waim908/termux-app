@@ -178,7 +178,7 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         frm = findViewById(R.id.frame);
         findViewById(R.id.terminal_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
-                Toast.makeText(MainActivity.this, "ᗜˬᗜ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "ᗜ⩊ᗜ", Toast.LENGTH_SHORT).show();
                 // private TermuxActivity mTermuxActivity;
                 // mTermuxActivity = termuxActivity;
                 // boolean preState = mShowTerminal;
