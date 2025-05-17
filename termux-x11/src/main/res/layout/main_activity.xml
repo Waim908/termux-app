@@ -64,6 +64,13 @@
                 android:minHeight="40dp" />
 
             <Button
+                android:id="@+id/terminal_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Termux" />
+
+            <Button
                 android:id="@+id/preferences_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

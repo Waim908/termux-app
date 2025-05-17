@@ -175,6 +175,12 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         lorieContentView = findViewById(R.id.id_display_window);
 
         frm = findViewById(R.id.frame);
+        findViewById(R.id.terminal_button).setOnClickListener((l) -> {
+            if (null != termuxActivityListener) {
+                Toast.makeText(MainActivity.this, "Nya~", Toast.LENGTH_SHORT).show();
+            }
+        });        
+
         findViewById(R.id.preferences_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
                 termuxActivityListener.onX11PreferenceSwitchChange(true);
