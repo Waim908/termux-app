@@ -179,11 +179,6 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         findViewById(R.id.terminal_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
                 Toast.makeText(MainActivity.this, "ᗜ⩊ᗜ", Toast.LENGTH_SHORT).show();
-                // private TermuxActivity mTermuxActivity;
-                // mTermuxActivity = termuxActivity;
-                // boolean preState = mShowTerminal;
-                // mShowTerminal = !mShowTerminal;
-                // mTermuxActivity.getMainContentView().setTerminalViewSwitchSlider(true);
             }
         });        
 
