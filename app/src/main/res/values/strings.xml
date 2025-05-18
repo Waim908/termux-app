@@ -233,4 +233,7 @@
     <string name="remove_shortcut">remove this shortcut?</string>
     <string name="remove">delete</string>
     <string name="invalid_config">invalid config</string>
+
+    <!-- New string -->
+    <string name="run_install_x11">Need Network,Run `sh ~/install` in the terminal.</string>
 </resources>
