@@ -415,7 +415,6 @@ public class TermuxActivity extends com.termux.x11.MainActivity implements Servi
                     CommandUtils.exec(activity, "chmod", new ArrayList<>(Arrays.asList("+x", TERMUX_FILES_DIR_PATH + "/home/install")));
                     CommandUtils.exec(activity, "chmod", new ArrayList<>(Arrays.asList("+x", TERMUX_FILES_DIR_PATH + "/home/collect_process_info")));
                     FileUtils.copyAssetsFile2Phone(activity, "termux-x11-nightly-1.03.10-0-all.deb");
-                    CommandUtils.execInPath(activity, "install", null, "/home/");
 					Toast.makeText(TermuxActivity.this,R.string.run_install_x11,Toast.LENGTH_LONG).show();
                 });
             }
