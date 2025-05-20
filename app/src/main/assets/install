@@ -10,5 +10,5 @@ echo "Install termux-x11-nightly..." 2>&1 >/dev/tty
 yes | apt install ./termux-x11-nightly-1.03.10-0-all.deb 2>&1 >/dev/tty
 yes | apt autoremove 2>&1 >/dev/tty
 yes | apt install xwayland 2>&1 >/dev/tty
-ehco "Done" 2>&1 >/dev/tty
+echo "Done" 2>&1 >/dev/tty
 # rm -rf $0
