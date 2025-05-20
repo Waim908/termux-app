@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        package_variant: [ apt-android-7, apt-android-5 ]
+        package_variant: [ apt.android-7, apt.android-5 ]
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -71,6 +71,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: "**/*.apk"
           file_glob: true
-          release_name: "v1.0.5b18-update-boot-strap-android7-only"
+          release_name: "v1.0.5b18-update-boot-strap-to2025-test"
           tag: 1.0.5-beta.18
           checksums: sha256,sha512,md5

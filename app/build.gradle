@@ -12,7 +12,7 @@ ext {
     // Bootstrap of a different variant must not be manually installed by the user after app installation
     // by replacing $PREFIX since app code is dependant on the variant used to build the APK.
     // Currently supported values are: [ "apt-android-7" "apt-android-5" ]
-    packageVariant = System.getenv("TERMUX_PACKAGE_VARIANT") ?: "apt-android-7" // Default: "apt-android-7"
+    packageVariant = System.getenv("TERMUX_PACKAGE_VARIANT") ?: "apt.android-7" // Default: "apt-android-7"
 }
 
 android {
@@ -241,12 +241,12 @@ task downloadBootstraps() {
             downloadBootstrap("arm", "cb0a58fcba4cdc8d1d0109f055cd5396befc8231269bea8e07a36aee3cf8d939", version)
             downloadBootstrap("i686", "c6e2783598ec8edcdb3ebd14703db7350cf615114b359de9feccbc2c0cc6e9da", version)
             downloadBootstrap("x86_64", "fb04afcb3557c515d6ded442999920321d6f378054d095d14c78ef36a983d21e", version)
-        } else if (packageVariant == "apt-android-5") {
-            def version = "2022.04.28-r6" + "+" + packageVariant
-            downloadBootstrap("aarch64", "913609d439415c828c5640be1b0561467e539cb1c7080662decaaca2fb4820e7", version)
-            downloadBootstrap("arm", "26bfb45304c946170db69108e5eb6e3641aad751406ce106c80df80cad2eccf8", version)
-            downloadBootstrap("i686", "46dcfeb5eef67ba765498db9fe4c50dc4690805139aa0dd141a9d8ee0693cd27", version)
-            downloadBootstrap("x86_64", "615b590679ee6cd885b7fd2ff9473c845e920f9b422f790bb158c63fe42b8481", version)
+        } else if (packageVariant == "apt.android-5") {
+            def version = "2025.04.04-r" + "+" + packageVariant
+            downloadBootstrap("aarch64", "3154a32a61699db1d34397cc1ec747e40f894312a4df6fad763a3f5c72ffc9c6", version)
+            downloadBootstrap("arm", "aa1c96cedc501cddfac896ed18147aed16db77aac0ed707d2a36f0ed29d0b315", version)
+            downloadBootstrap("i686", "44c7f29c0ec9c672e93c29cd652790f47dcc0b721b1f294851a83e30f0c5a3b7", version)
+            downloadBootstrap("x86_64", "5238656992758c6e163f309739025fc63f906fe3130df9a91ea51d147ca76d05", version)
         } else {
             throw new GradleException("Unsupported TERMUX_PACKAGE_VARIANT \"" + packageVariant + "\"")
         }

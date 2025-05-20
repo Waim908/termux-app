@@ -177,10 +177,10 @@ public class TermuxBootstrap {
     public enum PackageVariant {
 
         /** {@link PackageManager#APT} variant for Android 7+. */
-        APT_ANDROID_7("apt-android-7"),
+        APT_ANDROID_7("apt.android-7"),
 
         /** {@link PackageManager#APT} variant for Android 5+. */
-        APT_ANDROID_5("apt-android-5");
+        APT_ANDROID_5("apt.android-5");
 
         ///** {@link PackageManager#TAPM} variant for Android 7+. */
         //TAPM_ANDROID_7("tapm-android-7");
