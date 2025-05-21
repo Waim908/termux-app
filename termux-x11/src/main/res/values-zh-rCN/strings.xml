@@ -304,4 +304,5 @@ Dynarec 构建 BigBlock<br /><br />
     <string name="enable_touch_screen">触屏模式</string>
     <string name="command">命令</string>
     <string name="title">标题</string>
+    <string name="stopDesktopTitle">是否关闭图形显示?</string>
 </resources>

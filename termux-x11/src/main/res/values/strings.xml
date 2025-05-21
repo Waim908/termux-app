@@ -329,4 +329,5 @@
     <string name="enable_touch_screen">touch screen</string>
     <string name="command">command</string>
     <string name="title">title</string>
+    <string name="stopDesktopTitle">Turn off graphics display?</string>
 </resources>
