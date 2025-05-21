@@ -247,7 +247,7 @@ Dynarec 构建 BigBlock<br /><br />
     <string name="open_controller">启动控制器</string>
     <string name="close_controller">关闭控制器</string>
     <string name="progress_manager">任务管理器</string>
-    <string name="install_x11_server_bridge">重建依赖</string>
+    <string name="install_x11_server_bridge">重建x11依赖并安装图形化任务管理器脚本</string>
     <string name="stop_desktop">关闭显示器</string>
     <string name="stretch_to_fit_display">拉伸以适合显示屏</string>
     <string name="pip_mode">画中画模式</string>
