@@ -1,14 +1,32 @@
 #!/data/data/com.termux/files/usr/bin/sh
-pkg remove termux-display-nightly -y 2>&1 >/dev/tty
-pkg remove termux-x11-nightly -y 2>&1 >/dev/tty
-echo "Upgrade..." 2>&1 >/dev/tty
-yes | pkg up 2>&1 >/dev/tty
-yes | apt install -f -y 2>&1 >/dev/tty
-yes | pkg i x11-repo 2>&1 >/dev/tty
+pkg remove termux-display-nightly -y 
+pkg remove termux-x11-nightly -y 
+echo "Upgrade..." 
+echo "update or change repo? 直接更新还是先修改软件源？"
+echo "1.update 直接更新"
+echo "2.repo 修改软件源（推荐）"
+read -n 1 -p "input number 输入数字：" input
+case $input in
+1)
+yes | pkg up 
+yes | apt install -f -y 
+yes | pkg i x11-repo 
 cd ~
-echo "Install termux-x11-nightly..." 2>&1 >/dev/tty
-yes | apt install ./termux-x11-nightly-1.03.10-0-all.deb 2>&1 >/dev/tty
-yes | apt autoremove 2>&1 >/dev/tty
-yes | apt install xwayland 2>&1 >/dev/tty
-echo "Done" 2>&1 >/dev/tty
-# rm -rf $0
+echo "Install termux-x11-nightly..." 
+yes | apt install ./termux-x11-nightly-1.03.10-0-all.deb 
+yes | apt autoremove 
+yes | apt install xwayland 
+echo "Done" 
+;;
+2)
+termux-change-repo
+yes | apt upgrade 
+yes | apt install -f -y 
+yes | pkg i x11-repo 
+cd ~
+echo "Install termux-x11-nightly..." 
+yes | apt install ./termux-x11-nightly-1.03.10-0-all.deb 
+yes | apt autoremove 
+yes | apt install xwayland 
+echo "Done" 
+;;

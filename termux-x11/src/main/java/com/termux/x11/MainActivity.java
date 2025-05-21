@@ -86,6 +86,7 @@ import com.termux.x11.utils.KeyInterceptor;
 import com.termux.x11.utils.SamsungDexUtils;
 import com.termux.x11.utils.TermuxX11ExtraKeys;
 import com.termux.x11.utils.X11ToolbarViewPager;
+import com.termux.app.TermuxActivity;
 
 import java.io.File;
 import java.util.Map;
