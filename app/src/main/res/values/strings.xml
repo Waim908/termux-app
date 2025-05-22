@@ -236,4 +236,5 @@
 
     <!-- New string -->
     <string name="run_install_x11">Need Network,Run `sh ~/install` in the terminal.</string>
+    <string name="stopDesktopTitle">Turn off graphics display?</string>
 </resources>

@@ -133,4 +133,5 @@
     <string name="remove">删除</string>
     <string name="invalid_config">无效的参数</string>
     <string name="run_install_x11">需要联网，在终端执行`sh ~/install`</string>
+    <string name="stopDesktopTitle">是否关闭图形显示?</string>
 </resources>
