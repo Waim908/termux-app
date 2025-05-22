@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/colorDayNight"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,7 +15,7 @@
 
         <Spinner
             android:id="@+id/SProfile"
-            style="@style/ComboBox"
+            style="@style/TerminalComboBox"
             android:layout_width="300dp" />
 
         <ImageView

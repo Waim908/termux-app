@@ -86,7 +86,6 @@ import com.termux.x11.utils.KeyInterceptor;
 import com.termux.x11.utils.SamsungDexUtils;
 import com.termux.x11.utils.TermuxX11ExtraKeys;
 import com.termux.x11.utils.X11ToolbarViewPager;
-import com.termux.app.TermuxActivity;
 
 import java.io.File;
 import java.util.Map;
@@ -180,7 +179,6 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         findViewById(R.id.terminal_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
                 Toast.makeText(MainActivity.this, "ᗜ⩊ᗜ", Toast.LENGTH_SHORT).show();
-                termuxActivityListener.setTerminalViewSwitchSlider(true);
             }
         });        
 

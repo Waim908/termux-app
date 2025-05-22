@@ -64,8 +64,8 @@
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
         <item name="android:spinnerMode">dropdown</item>
-        <item name="android:background">#808080</item>
-        <item name="android:popupBackground">#808080</item>
+        <item name="android:background">@color/colorDayNight</item>
+        <item name="android:popupBackground">@color/DayNight</item>
     </style>
 
     <style name="ListPopupWindow" parent="@android:style/Widget.ListPopupWindow">
