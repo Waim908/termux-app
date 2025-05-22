@@ -329,6 +329,5 @@
     <string name="enable_touch_screen">touch screen</string>
     <string name="command">command</string>
     <string name="title">title</string>
-    <string name="stopDesktopTitle">Turn off graphics display?</string>
     <string name="operation_hint">Back + left swipe opens terminal \n Back + right swipe opens settings.</string>
 </resources>
