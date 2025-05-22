@@ -329,5 +329,5 @@
     <string name="enable_touch_screen">touch screen</string>
     <string name="command">command</string>
     <string name="title">title</string>
-    <string name="stopDesktopTitle">Turn off graphics display?</string>
+    <string name="operation_hint">Swipe back from left screen edge to open terminal\nSwipe back from right screen edge to open settings\nSidebar must be unlocked when floating ball is active</string>
 </resources>
