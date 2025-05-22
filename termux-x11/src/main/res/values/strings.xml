@@ -330,5 +330,5 @@
     <string name="command">command</string>
     <string name="title">title</string>
     <string name="stopDesktopTitle">Turn off graphics display?</string>
-    <string name="operation_hint">Back + left swipe opens terminal \n Back + right swipe opens settings.</string>
+    <string name="operation_hint">Back + left swipe opens terminal\nBack + right swipe opens settings\nUnlock sidebar to swipe with floating ball active.</string>
 </resources>

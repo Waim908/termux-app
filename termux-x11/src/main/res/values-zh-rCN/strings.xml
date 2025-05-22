@@ -305,5 +305,5 @@ Dynarec 构建 BigBlock<br /><br />
     <string name="command">命令</string>
     <string name="title">标题</string>
     <string name="stopDesktopTitle">是否关闭图形显示?</string>
-    <string name="operation_hint">按下返回从屏幕左侧滑动打开终端 \n 下返回从屏幕右侧滑动打开设置</string>
+    <string name="operation_hint">按下返回从屏幕左侧滑动打开终端\n按下返回从屏幕右侧滑动打开设置\n启用悬浮球之后需要解除侧栏锁定</string>
 </resources>
