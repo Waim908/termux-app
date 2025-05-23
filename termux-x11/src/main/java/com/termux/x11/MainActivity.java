@@ -181,7 +181,7 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
                 Toast.makeText(MainActivity.this, "ᗜ⩊ᗜ", Toast.LENGTH_SHORT).show();
                 new AlertDialog.Builder(MainActivity.this)
                     .setTitle(R.string.operation_hint_title)
-                    .setMessage(R.sting.operation_hint)
+                    .setMessage(R.string.operation_hint)
                     .setNegativeButton("OK", null)
                     .create()
                     .show();
