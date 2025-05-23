@@ -329,6 +329,6 @@
     <string name="enable_touch_screen">touch screen</string>
     <string name="command">command</string>
     <string name="title">title</string>
-    <string name="operation_hint">1. Press back and swipe from the left screen edge to open terminal\n2. Press back and swipe from the right screen edge to open settings\n3. After entering target interface, press back and swipe from opposite edge to return to home\n4. Floating ball requires sidebar lock to be disabled before operation\n5. Before using x11, please select dependency installation via settings instead of directly installing original termux-x11-nightly\n6. You can directly access Termux internal files through Android's native file manager</string>
+    <string name="operation_hint">1. Press back and slide from the left side of the screen to open the terminal\n2. Press back and slide from the right side of the screen to open the settings\n3. After entering the corresponding interface, press back and slide in the opposite direction to return to the main interface\n4. After the floating ball is enabled, you need to unlock the sidebar to operate\n5. Before using x11, please select dependent installation through the settings interface instead of directly installing the original `termux-x11-nightly`\n6. You can directly access the internal files of termux through the Android native file manager</string>
     <string name="operation_hint_title">Operation Hint</string>
 </resources>
