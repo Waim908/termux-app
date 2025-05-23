@@ -304,5 +304,6 @@ Dynarec 构建 BigBlock<br /><br />
     <string name="enable_touch_screen">触屏模式</string>
     <string name="command">命令</string>
     <string name="title">标题</string>
-    <string name="operation_hint">按下返回从屏幕左侧滑动打开终端\n按下返回从屏幕右侧滑动打开设置\n悬浮球启用后需要解除侧栏锁定才能操作</string>
+    <string name="operation_hint">按下返回从屏幕左侧滑动打开终端\n按下返回从屏幕右侧滑动打开设置\n进入对应界面后按下返回朝相反方向滑动回到主界面\n悬浮球启用后需要解除侧栏锁定才能操作</string>
+    <string name="operation_hint_title">操作提示</string>
 </resources>

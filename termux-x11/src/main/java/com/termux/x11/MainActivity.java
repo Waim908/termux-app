@@ -176,9 +176,15 @@ public class MainActivity extends LoriePreferences implements View.OnApplyWindow
         lorieContentView = findViewById(R.id.id_display_window);
 
         frm = findViewById(R.id.frame);
-        findViewById(R.id.terminal_button).setOnClickListener((l) -> {
+        findViewById(R.id.operation_hint_button).setOnClickListener((l) -> {
             if (null != termuxActivityListener) {
                 Toast.makeText(MainActivity.this, "ᗜ⩊ᗜ", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(MainActivity.this)
+                    .setTitle(R.string.operation_hint_title)
+                    .setMessage(R.sting.operation_hint)
+                    .setNegativeButton("OK", null)
+                    .create()
+                    .show();
             }
         });        
 

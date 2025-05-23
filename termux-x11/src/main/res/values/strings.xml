@@ -329,5 +329,6 @@
     <string name="enable_touch_screen">touch screen</string>
     <string name="command">command</string>
     <string name="title">title</string>
-    <string name="operation_hint">Swipe back from left screen edge to open terminal\nSwipe back from right screen edge to open settings\nSidebar must be unlocked when floating ball is active</string>
+    <string name="operation_hint">Swipe back from left screen edge to open terminal\nSwipe back from right screen edge to open settings\nSwipe opposite direction to return home after entering\nSidebar must be unlocked when floating ball is active</string>
+    <string name="operation_hint_title">Operation Hint</string>
 </resources>
