@@ -1,22 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# 变量 taskmanger_type 如果不存在或者为空使用原版只截取10行模式，如果为linux显示所有进程，为exe只显示匹配该字符串的进程
-export taskmanger_type=$(cat $TMPDIR/taskmgr_type)
-if [[ -z $taskmanger_type ]]; then
-if [ "$1" -eq 0 ];then
-    ps -aux|sort -k5,6nr|head -n 10|awk '{print $2,$5,$6,$11}' > /data/data/com.termux/files/usr/tmp/process_info
-else
-    echo "" > /data/data/com.termux/files/usr/tmp/process_info
-fi
-elif [[ $taskmanger_type == linux ]]; then
 if [ "$1" -eq 0 ];then
     ps -aux|sort -k5,6nr|awk '{print $2,$5,$6,$11}' > /data/data/com.termux/files/usr/tmp/process_info
 else
     echo "" > /data/data/com.termux/files/usr/tmp/process_info
-fi
-elif [[ $taskmanger_type == exe ]]; then
-if [ "$1" -eq 0 ];then
-    ps -aux|sort -k5,6nr|grep "*.exe"|awk '{print $2,$5,$6,$11}' > /data/data/com.termux/files/usr/tmp/process_info
-else
-    echo "" > /data/data/com.termux/files/usr/tmp/process_info
-fi
 fi

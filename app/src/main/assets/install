@@ -30,3 +30,5 @@ yes | apt autoremove
 yes | apt install xwayland 
 echo "Done" 
 ;;
+*) exit ;;
+esac
