@@ -5,7 +5,7 @@ echo "Upgrade..."
 echo "update or change repo? 直接更新还是先修改软件源？"
 echo "1.update 直接更新"
 echo "2.repo 修改软件源（推荐）"
-read -n 1 -p "input number 输入数字：" input
+read -n1 -p "input number 输入数字：" input
 case $input in
 1)
 yes | pkg up 
