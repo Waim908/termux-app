@@ -202,7 +202,38 @@ public class TaskManagerDialog extends ContentDialog implements OnGetProcessInfo
         int avgClockSpeed = totalClockSpeed / clockSpeeds.length;
         TextView tvCPUTitle = findViewById(R.id.TVCPUTitle);
         byte cpuUsagePercent = (byte) (((float) avgClockSpeed / maxClockSpeed) * 100.0f);
-        tvCPUTitle.setText("CPU (" + cpuUsagePercent + "%)");
+
+        // 获取 CPU 温度（无需权限和额外库）
+        float cpuTemperature = readCPUTemperature();
+        String temperatureText = (cpuTemperature >= 0) ? 
+            String.format(" | %.1f°C", cpuTemperature) : "";
+
+        tvCPUTitle.setText("CPU (" + cpuUsagePercent + "%)" + temperatureText);
+    }
+
+    /**
+     * 从 /sys/class/thermal 读取 CPU 温度（单位：°C）
+     * 注意：部分设备可能需要 Root，但许多设备允许直接读取。
+     */
+    private float readCPUTemperature() {
+        String[] thermalPaths = {
+            "/sys/class/thermal/thermal_zone0/temp",  // 最常见路径
+            "/sys/devices/virtual/thermal/thermal_zone0/temp",
+            "/sys/class/hwmon/hwmon0/temp1_input"     // 备用路径
+        };
+
+        for (String path : thermalPaths) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+                String line = reader.readLine();
+                if (line != null) {
+                    int temp = Integer.parseInt(line.trim());
+                    return temp / 1000.0f;  // 转换为摄氏度（多数文件返回毫摄氏度）
+                }
+            } catch (Exception e) {
+                Log.w("TaskManager", "Failed to read temperature from " + path, e);
+            }
+        }
+        return -1;  // 表示失败
     }
 
     private void updateMemoryInfoView() {
