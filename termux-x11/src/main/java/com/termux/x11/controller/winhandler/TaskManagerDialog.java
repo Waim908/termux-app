@@ -3,6 +3,7 @@ package com.termux.x11.controller.winhandler;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,9 @@ import com.termux.x11.controller.core.ProcessHelper;
 import com.termux.x11.controller.core.StringUtils;
 import com.termux.x11.controller.widget.CPUListView;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
