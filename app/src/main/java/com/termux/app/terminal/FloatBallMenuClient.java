@@ -84,6 +84,7 @@ public class FloatBallMenuClient {
     private void init() {
 //      1 set position of float ball, set size, icon and drawable
         int ballSize = DensityUtil.dip2px(mTermuxActivity, 40);
+        // Use selector drawable so pressed/focused state can be reflected automatically.
         Drawable ballIcon = AppCompatResources.getDrawable(mTermuxActivity, R.drawable.icon_float_ball_shape);
 //      different config below
 //      FloatBallCfg ballCfg = new FloatBallCfg(ballSize, ballIcon);

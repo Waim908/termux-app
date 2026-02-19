@@ -69,6 +69,9 @@ public class FloatBall extends FrameLayout implements ICarrier {
         imageView = new ImageView(context);
         final Drawable icon = mConfig.mIcon;
         mSize = mConfig.mSize;
+        // Ensure selector/stateful drawables can react to the FloatBall pressed state.
+        setClickable(true);
+        imageView.setDuplicateParentStateEnabled(true);
         Util.setBackground(imageView, icon);
         addView(imageView, new ViewGroup.LayoutParams(mSize, mSize));
         initLayoutParams(context);
@@ -214,7 +217,7 @@ public class FloatBall extends FrameLayout implements ICarrier {
                 touchUp();
                 break;
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
     private void touchDown(int x, int y) {
@@ -224,6 +227,12 @@ public class FloatBall extends FrameLayout implements ICarrier {
         mLastY = mDownY;
         isClick = true;
         removeSleepRunnable();
+
+        setPressed(true);
+        if (imageView != null) {
+            imageView.setPressed(true);
+            imageView.setAlpha(1.0f);
+        }
     }
 
     private void touchMove(int x, int y) {
@@ -236,12 +245,26 @@ public class FloatBall extends FrameLayout implements ICarrier {
         }
         mLastX = x;
         mLastY = y;
+        
+        if (imageView != null) {
+            imageView.setAlpha(1.0f);
+        }
+
+        // When dragging, don't keep the pressed visual state.
+        if (!isClick) {
+            setPressed(false);
+            if (imageView != null) imageView.setPressed(false);
+        }
+
         if (!isClick) {
             onMove(deltaX, deltaY);
         }
     }
 
     private void touchUp() {
+        setPressed(false);
+        if (imageView != null) imageView.setPressed(false);
+
         mVelocity.computeCurrentVelocity();
         mVelocityX = (int) mVelocity.getXVelocity();
         mVelocityY = (int) mVelocity.getYVelocity();
@@ -287,6 +310,11 @@ public class FloatBall extends FrameLayout implements ICarrier {
         int destX;
         destX = mLayoutParams.x < centerX ? 0 : screenWidth - width;
         sleep = false;
+
+        if (imageView != null) {
+            imageView.setAlpha(1.0f);
+        }
+
         moveToX(true, destX);
     }
 
@@ -308,6 +336,10 @@ public class FloatBall extends FrameLayout implements ICarrier {
             mSleepX = destX;
         }
         moveToX(smooth, destX);
+
+        if (imageView != null) {
+            imageView.setAlpha(0.3f);
+        }
     }
 
     private int getScrollDuration(int distance) {
