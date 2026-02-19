@@ -2,6 +2,11 @@ name: Attach Debug APKs To Release
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Custom release tag (e.g. 1.0.7). Leave empty to use the default version defined in the action."
+        required: false
+        default: ""
 
 jobs:
   build:
@@ -65,12 +70,23 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
-      - name: Upload APKs to release
+      - name: Upload APKs to release (custom tag)
+        if: ${{ inputs.tag != '' }}
+        uses: termux/upload-release-action@v4.1.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: "**/*.apk"
+          file_glob: true
+          release_name: "v${{ inputs.tag }}"
+          tag: ${{ inputs.tag }}
+          checksums: sha256,sha512,md5
+
+      - name: Upload APKs to release (default tag from action)
+        if: ${{ inputs.tag == '' }}
         uses: termux/upload-release-action@v4.1.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: "**/*.apk"
           file_glob: true
           release_name: "v1.0.7-beta"
-          tag: 1.0.7
           checksums: sha256,sha512,md5
